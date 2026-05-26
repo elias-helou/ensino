@@ -1,0 +1,99 @@
+%chktex-file 1 chktex-file 2 chktex-file 3
+%chktex-file 8 chktex-file 9 chktex-file 10
+%chktex-file 13 %chktex-file 17 %chktex-file 23
+%chktex-file 45 %chktex-file 25 %chktex-file 35
+%chktex-file 40
+
+\documentclass[oneside,12pt,a4paper]{report}
+
+\usepackage{template}
+
+\begin{document}
+
+%    \begin{center}
+%        \fontsize{17.28}{17.28}
+%            \textbf{Equações Diferenciais Ordinárias}
+%
+%            \textbf{Banco de Questões}
+%    \end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTÕES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Definições e Terminologia}
+
+\exercicio[Zill, Seção 1.1, Exercício 55] Considere a equação diferencial $dy/dx=e^{-x^2}$.
+\begin{itensquestao}
+    \item Explique por que a solução da ED necessariamente é uma função crescente em qualquer intervalo do eixo $x$.
+    \item Quais são os limites $\displaystyle\lim_{x\to-\infty}dy/dx$ e $\displaystyle\lim_{x\to\infty}dy/dx$? O que isto implica a respeito da curva da solução quando $x\to\pm\infty$?
+    \item Determine um intervalo no qual a solução $y=\phi(x)$ tem concavidade para baixo e um intervalo no qual a curva tem concavidade para cima.
+\end{itensquestao}
+
+\section{Problemas de Valor Inicial}
+
+\exercicio[Zill, Seção 1.2, Exercício 31 -- Original]
+\begin{itensquestao}
+    \item Verifique que $y=-1/(x+c)$ é uma família a um parâmetro de soluções da equação diferencial $y'=y^2$.
+    \item Uma vez que $f(x,y)=y^2$ e $\partial f/\partial y=2y$ são contínuas, a região $R=\{(x,y)\in\mathbb{R}^2|a\leq x\leq b, c\leq y \leq d\}$ do Teorema de Existência e Unicidade pode ser tomada como todo o plano $xy$. Ache uma solução da família no item (a) que satisfaça $y(0)=1$. Então, ache uma solução da família no item (a) que satisfaça $y(0)=-1$. Determine o maior intervalo $I$ de definição da solução de cada problema de valor inicial.
+    \item Determine o maior intervalo $I$ de definição para o problema de valor inicial $y'=y^2$, $y(0)=0$.
+\end{itensquestao}
+
+\exercicio[Zill, Seção 1.2, Exercício 31 -- Modificada]
+\begin{itensquestao}
+    \item Verifique que $y=-1/(x+c)$ é uma família a um parâmetro de soluções da equação diferencial $y'=y^2$.
+    \item Existe alguma região do plano $xy$ para a qual há uma única solução de um PVI envolvendo a EDO definida em (a) e uma condição $y(x_0)=y_0$? Justifique. Em caso afirmativo, determine essa região.
+    \item Ache uma solução da família no item (a) que satisfaça $y(0)=1$. Determine o maior intervalo $I$ de definição dessa solução.
+    \item Determine o maior intervalo $I$ de definição para o problema de valor inicial $y'=y^2$, $y(0)=0$.
+\end{itensquestao}
+
+\section{Equações Separáveis}
+
+\exercicio[Zill, Seção 2.2, Exercícios 9, 19] Ache a solução geral da equação diferencial dada. Dê o maior intervalo $I$ sobre o qual a solução geral está definida. Determine se há termos transientes na solução geral.
+\begin{itensquestao}[2]
+    \item $y\ln(x)\dfrac{dy}{dx}=\left(\dfrac{y+1}{x}\right)^2$
+    \item $\dfrac{dy}{dx}=\dfrac{xy+3x-y-3}{xy-2x+4y-8}$
+\end{itensquestao}
+
+\exercicio[Zill, Seção 2.2, Exercícios 31, 32] Encontre uma solução explícita do problema de valor inicial. Determine o intervalo exato de definição $I$.
+\begin{itensquestao}[2]
+    \item $\dfrac{dy}{dx}=\dfrac{2x+1}{2y},\quad y(-2)=-1$
+    \item $(2y-2)\dfrac{dy}{dx}=3x^2+4x+2,\quad y(1)=-2$
+\end{itensquestao}
+
+\section{Equações Exatas}
+
+\exercicio[Zill, Seção 2.3, Exercício 39]
+\begin{itensquestao}
+    \item Mostre que uma família de soluções a um parâmetro da equação
+    \[(4xy+3x^2)dx+(2y+2x^2)dy=0\]
+    é $x^3+2x^2y+y^2=c$.
+    \item Mostre que as condições iniciais $y(0)=-2$ e $y(1)=1$ determinam a mesma solução implícita.
+    \item Ache soluções explícitas $y_1(x)$ e $y_2(x)$ da equação diferencial do item (a) tal que $y_1(0)=-2$ e $y_2(1)=1$. 
+\end{itensquestao}
+
+\section{Equações de Bernoulli}
+
+\exercicio[Inspirado no material do Prof. Bonotto] O peso $p(t)$ para uma espécie de peixe é dado pela seguinte equação obtida experimentalmente:
+\[\frac{dp}{dt}=\alpha p^\frac{2}{3}-\beta p\]
+onde $\alpha$ é a constante de anabolismo (taxa de síntese de massa por unidade de superfície do animal) e $\beta$ é a constante de catabolismo (taxa de diminuição de massa por unidade de superfície). Resolva a ED levando em conta que ela é uma equação de Bernoulli. Assumindo que $p(0)=0$, determine em qual instante de tempo o peixe atinge o peso de $\frac{1}{16}\left(\frac{\alpha}{\beta}\right)^3$.
+
+\exercicio[Zill, Seção 2.5, Exercício 38] No estudo de dinâmica de populações, um dos modelos mais famosos para uma população que cresce com limitações é a equação de logística
+\[\frac{dP}{dt}=P(a-bP),\]
+em que $a$ e $b$ são constantes positivas. Resolva a ED levando em conta que ela é de Bernoulli.
+
+\section{Fator Integrante}
+
+\exercicio[Zill, Seção 2.3, Exercício 53] Um marca-passo cardíaco consiste em uma chave, uma bateria de tensão constante $E_0$, um capacitor com capacitância constante $C$, e o coração com um resistor com resistência constante $R$. Quando a chave é fechada, o capacitor se carrega; quando a chave é aberta, o capacitor se descarrega, enviando um estímulo elétrico para o coração. Durante o tempo em que  o coração é estimulado, a tensão $E$ em todo o coração satisfaz a equação diferencial linear
+\[\frac{dE}{dt}=-\frac{1}{RC}E\]
+Resolva a ED sujeita a $E(4)=E_0$.
+
+\exercicio[Zill, Seção 3.1, Exercício 28 -- Modificada para esclarecer o enunciado] Suponha um tanque de mistura aberto com capacidade máxima de $400$ galões, contendo uma salmoura com quantidade inicial de sal $A(0)=50 \mathrm{lb}$ e volume inicial de $300~\mathrm{gal}$. A salmoura é bombeada para dentro do tanque a uma taxa de $3~\mathrm{gal/min}$, com concentração de sal de $2~\mathrm{lb/gal}$; após a mistura, a solução homogeneizada deixa o tanque a uma taxa de $2~\mathrm{gal/min}$.
+\begin{itensquestao}
+    \item Quando o tanque transbordará?
+    \item No instante em que estiver transbordando, qual será a quantidade de libras de sal no tanque?
+    \item Suponha que, embora o tanque esteja transbordando, a solução salina continue a ser bombeada para dentro a uma taxa de $3~\mathrm{gal/min}$ e a solução bem misturada continue a ser bombeada para fora a uma taxa de $2~\mathrm{gal/min}$. Determine a quantidade de libras de sal no tanque no instante $t=150~\mathrm{min}$.
+    \item Determine a quantidade de libras de sal no tanque quando $t\to\infty$.
+\end{itensquestao}
+
+\end{document}

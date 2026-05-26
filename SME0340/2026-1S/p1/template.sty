@@ -1,0 +1,114 @@
+%PACKAGES======================================================================
+\usepackage[brazil]{babel}
+\usepackage{graphicx}
+\usepackage[left=3.0 cm, top=3.0 cm, right=2.0 cm, bottom=2.0 cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,dsfont,mathtools,blindtext}
+\usepackage{indentfirst}
+\usepackage{setspace}
+\setstretch{1.5}
+\usepackage{lipsum}
+\usepackage{color}
+\usepackage{tensor}
+\usepackage{sectsty}
+\usepackage{array}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{tabularx}
+\usepackage{caption} 
+\usepackage{subcaption}
+\usepackage[most]{tcolorbox}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{textcomp}
+\usepackage{gensymb}
+\usepackage{xifthen}
+\usepackage{enumitem}
+\usepackage{pgfplots}
+\usepackage[american]{circuitikz}
+\usepackage{tikz}
+\pgfplotsset{compat=1.18}
+\usepackage{microtype}
+\usepackage{float}
+\usepackage{arydshln}
+\usepackage[hidelinks, colorlinks=false,urlcolor=blue,filecolor=black,citecolor=black]{hyperref}
+\usepackage[alf, abnt-emphasize=bf, abnt-thesis-year=both,
+abnt-repeated-author-omit=no, abnt-last-names=abnt,
+abnt-etal-cite, abnt-etal-list=3, abnt-etal-text=emph]{abntex2cite}
+
+% =========================================================
+% DEFINIÇÕES
+% =========================================================
+
+\setlength{\parindent}{1.25 cm}
+\chapterfont{\fontsize{17.28}{17.28}\selectfont}
+\sectionfont{\fontsize{12}{12}\selectfont}
+\subsectionfont{\fontsize{12}{12}\selectfont}
+\subsubsectionfont{\fontsize{12}{12}\selectfont}
+%\usepackage{cmbright} % Fonte Sans-Serif
+
+\makeatletter
+% Para capítulos numerados (\chapter)
+\renewcommand{\@makechapterhead}[1]{%
+	{\setlength{\parindent}{0em} \raggedright
+		\bfseries\fontsize{14}{14} \thechapter~\MakeUppercase{#1} \par \nobreak \vspace{1cm}
+	}
+}
+% Para capítulos não numerados (\chapter*, Sumário, Listas, etc)
+\renewcommand{\@makeschapterhead}[1]{%
+	\vspace*{0cm}%
+	{\setlength{\parindent}{0em} \raggedright \normalfont
+	    \bfseries\normalsize\MakeUppercase{#1} \par \nobreak \vspace{1cm}
+	}
+}
+\makeatother
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=1.2pt] (char) {\footnotesize #1};}}
+
+% =========================================================
+% COMANDOS PERSONALIZADOS PARA LISTAS DE EXERCÍCIO
+% =========================================================
+
+% 1. Comando para o enunciado do exercício
+% Argumento Opcional [#1]: Referência/Fonte do exercício (ex: Zill - Seção 1.1)
+\newcounter{numExercicio}
+\newcommand{\exercicio}[1][]{%
+    \stepcounter{numExercicio}% Incrementa o contador em +1 a cada uso
+    \vspace{0.5cm}%
+    \noindent\textbf{\hyperlink{resp:ex\thenumExercicio}{\hypertarget{quest:ex\thenumExercicio}{Questão \thenumExercicio}}}%
+    \ifthenelse{\isempty{#1}}{:}{ (#1):}%
+}
+
+% 2. Ambiente para padronizar as listas de itens nas questões (a, b, c...)
+% Argumento Opcional [#1]: Número de colunas (Padrão = 1)
+\newenvironment{itensquestao}[1][1]{%
+    \def\numcolunas{#1}% Salva o número de colunas para usar no fechamento
+    \ifthenelse{\equal{#1}{1}}{}{% Se for diferente de 1, abre o multicols
+        \begin{multicols}{#1}
+    }%
+    \begin{enumerate}[label=\alph*)]
+}{%
+    \end{enumerate}
+    \ifthenelse{\equal{\numcolunas}{1}}{}{% Se for diferente de 1, fecha o multicols
+        \end{multicols}
+    }%
+}
+
+% 3. Ambiente para a caixa de resolução
+% Cria o contador para as resoluções
+\newcounter{numResolucao}
+\newcounter{itemRes}
+\newenvironment{resolucao}{%
+    \stepcounter{numResolucao}% Avança o número do exercício
+    \setcounter{itemRes}{0}% Zera a contagem das letras a cada novo exercício
+    \begin{tcolorbox}[enhanced, breakable, colback=blue!1!white, colframe=blue!75!black, title=\textbf{\hyperlink{quest:ex\thenumResolucao}{\hypertarget{resp:ex\thenumResolucao}{Exercício \thenumResolucao}}}]
+}{%
+    \end{tcolorbox}
+}
+
+% 4. Comando para o destaque dos itens na resolução (Letra automática)
+\newcommand{\itemresolucao}{%
+    \stepcounter{itemRes}% Avança a letra (1=a, 2=b, 3=c...)
+    \noindent\textcolor{blue}{\textbf{Item \alph{itemRes})}} %
+}
