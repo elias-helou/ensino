@@ -1,0 +1,71 @@
+\documentclass[oneside,12pt,a4paper]{article}
+
+\usepackage{amsmath}
+
+\title{SME0340 -- Segunda Prova}
+\date{}
+\author{}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathpazo}
+\usepackage[brazil]{babel}
+\usepackage{microtype}
+
+
+\begin{document}
+
+    \maketitle
+
+    \section*{Instruções}
+
+    \vspace*{0.5em}
+    \textbf{\textsc{Leia atentamente as instruções abaixo antes de começar.}}
+
+    \subsection*{Entrega}
+
+    A prova deverá ser entregue através do sistema eDisciplinas até às 23:59 do dia 13/07/2026. A entrega deve ser mediante um único arquivo no formato PDF, que pode ser obtido por digitalização de manuscritos ou geração direta (por meio de MarkDown, LaTeX, softwares de notas manuscritas, etc.) desde que seja legível e que seja compatível com todos visualizadores. Cada uma das 4 questões vale 3 pontos, mas a maior nota possível é 10.
+
+    \subsection*{Conteúdo}
+
+    A resposta a cada questão deverá conter:
+    \begin{itemize}
+        \item Um cabeçalho indicando claramente qual questão está sendo resolvida, incluindo o enunciado da questão (o LaTeX da prova está disponibilizado para ajudar com isso);
+
+        \item O desenvolvimento completo da questão, usando suas palavras para explicar cada um dos passos. Caso seja utilizado algum software para a resolução, explique para que parte e como foi utilizado;
+
+        \item A resposta final, claramente indicada.
+    \end{itemize}
+
+    \subsection*{Resolução}
+
+    Você \textbf{poderá} realizar consultas bibliográficas, utilizar software de computação simbólica ou consultas a sistemas de inteligência artificial para resolver as questões das provas. Você \textbf{não poderá} consultar as respostas de colegas. Tire dúvidas com o professor em vez de perguntar para colegas.
+
+    \pagebreak
+
+    \section*{Questão 1}
+    Considere que as funções dadas abaixo são todas soluções de uma mesma EDO homogênea. Determine se elas são linearmente independentes no intervalo $(-\infty, \infty)$.
+    $$
+        f_1(x) = e^x; \quad f_2(x) = e^{-x}, \quad f_3(x) = \sinh x.
+    $$
+
+    \section*{Questão 2}
+     A função indicada $y_1(x)$ é uma solução da equação homogênea associada. Encontre uma segunda solução $y_2(x)$ da equação homogênea e uma solução particular da equação não-homogênea dada abaixo.
+     $$
+        y'' - 4y = 2,\quad y_1 = e^{-2x}.
+     $$
+
+    \section*{Questão 3}
+    Encontre uma solução do problema de valor inicial abaixo:
+    $$
+        y''+y=\csc(x)\cot(x),\quad y\left(\frac{\pi}{2}\right)=-\frac{\pi}{2},~y'\left(\frac{\pi}{2}\right)=-1.
+    $$
+
+    \section*{Questão 4}
+    As funções indicadas são soluções linearmente independentes da equação diferencial homogênea associada em $(0,\infty)$. Ache a solução geral da equação não homogênea abaixo:
+    $$
+        x^2y''+xy'+\left(x^2-\frac{1}{4}\right)y=x^\frac{3}{2};\quad y_1=x^{-\frac{1}{2}}\cos(x),~y_2=x^{-\frac{1}{2}}\sin(x).
+    $$
+
+
+\end{document}
